@@ -2,15 +2,26 @@
   "name": "downloadyt",
   "version": "1.0.0",
   "description": "Download YouTube Videos",
-  "main": "src/index.ts",
+  "main": "dist",
   "author": "bugo07",
   "license": "MIT",
-  "private": false,
+  "typings": "types",
   "homepage": "https://github.com/BUGO07/DownloadYT#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/BUGO07/DownloadYT.git"
   },
+  "keywords": [
+    "ytdl-core",
+    "ytdl",
+    "youtube",
+    "download",
+    "video",
+    "downloader",
+    "mp4",
+    "vid"
+  ],
+  "private": false,
   "scripts": {
     "start": "yarn run build && yarn run start:built",
     "start:dev": "nodemon",
