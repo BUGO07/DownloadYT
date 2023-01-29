@@ -1,8 +1,9 @@
 {
   "name": "downloadyt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Download YouTube Videos",
   "main": "dist",
+  "bin": "dist",
   "author": "bugo07",
   "license": "MIT",
   "typings": "types",
