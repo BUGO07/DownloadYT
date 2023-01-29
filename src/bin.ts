@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { qualityType, urlType } from "downloadyt";
 import prompts from "prompts";
 import { downlaod } from "./download";
@@ -32,11 +33,15 @@ async function main() {
         : `Please specify desired video quality.`;
     },
   });
-
   console.time("Downloaded in");
   const path = await downlaod(url, quality);
   console.timeEnd("Downloaded in");
   console.log(`Downloaded to ${path}`);
 }
+
+process.on("SIGINT", function () {
+  console.log("Exiting...");
+  process.exit(1);
+});
 
 main();
