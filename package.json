@@ -1,7 +1,7 @@
 {
   "name": "downloadyt",
-  "version": "1.0.5",
-  "description": "Download YouTube Videos",
+  "version": "1.0.6",
+  "description": "Download YouTube videos with ease",
   "main": "dist",
   "bin": {
     "downloadyt": "./dist/bin.js"

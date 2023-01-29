@@ -11,10 +11,7 @@ export const downlaod = (
 ): Promise<string> => {
   return new Promise((resolve, reject) => {
     mkdir("videos", (err) => {
-      if (err && err.code !== "EEXIST")
-        reject(
-          `[YTDownload] ${err} \n\nFOR MORE ADVANCED HELP: https://discord.com/invite/BjEJFwh`
-        );
+      if (err && err.code !== "EEXIST") reject(`[YTDownload] ${err} \n\nERROR`);
       getInfo(url)
         .then((info) => {
           const video = ytdl(info.videoDetails.video_url, { quality });
@@ -41,9 +38,7 @@ export const downlaod = (
             resolve(filePath);
           });
           video.on("error", (error) =>
-            reject(
-              `[YTDownload] ${error} \n\nFOR MORE ADVANCED HELP: https://discord.com/invite/BjEJFwh`
-            )
+            reject(`[YTDownload] ${error} \n\nERROR`)
           );
           video.on("progress", (chunk, downloaded, total) => {
             if (logging) {
@@ -54,11 +49,7 @@ export const downlaod = (
             }
           });
         })
-        .catch((err) =>
-          reject(
-            `[YTDownload] ${err} \n\nFOR MORE ADVANCED HELP: https://discord.com/invite/BjEJFwh`
-          )
-        );
+        .catch((err) => reject(`[YTDownload] ${err} \n\nERROR`));
     });
   });
 };
